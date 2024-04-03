@@ -2,15 +2,18 @@ class BooksController < ApplicationController
  before_action :require_login, only: [:edit]
 
   def show
-    # @books = Book.find(params)
     @books = Book.new
     @book = Book.find(params[:id])
     @user = User.new
+    # @user = @book.user
+    # @books = @user.books
+    @book_comment = BookComment.new
   end
 
   def index
     @books = Book.all
     @book = Book.new
+    @book_comment = BookComment.new
   end
 
   def create
