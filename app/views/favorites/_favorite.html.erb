@@ -1,9 +1,11 @@
 <% if book.favorited_by?(current_user) %>
-  <%= link_to book_favorite_path(book), method: :delete do %>
-    ♥️️<%= book.favorites.count %>
+  <%= link_to book_favorite_path(book), method: :delete, style: "color: red;" do %>
+   <i class="fa-regular fa-face-grin-hearts" ></i>
+   <%= book.favorites.count %>
   <% end %>
 <% else %>
   <%= link_to book_favorite_path(book), method: :post do %>
-    ♥︎<%= book.favorites.count %>
+   <i class="fa-regular fa-face-grin-hearts" ></i>
+   <%= book.favorites.count %>
   <% end %>
 <% end %>
